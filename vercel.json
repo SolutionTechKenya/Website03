@@ -1,23 +1,36 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "tech.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/tech",
-      "dest": "/tech.html"
-    }
-  ]
-}
+    "version": 2,
+    "redirects": [
+      {
+        "source": "/index.html",
+        "destination": "/",
+        "permanent": true
+      },
+      {
+        "source": "/tech.html",
+        "destination": "/Roadmap",
+        "permanent": true
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/Roadmap",
+        "destination": "/tech.html"
+      }
+    ],
+    "builds": [
+      {
+        "src": "index.html",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "tech.html",
+        "use": "@vercel/static"
+      }
+    ]
+  }
+  
